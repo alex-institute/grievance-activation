@@ -23,7 +23,7 @@
       max-width: 480px;
       margin: 0 auto;
       background: #ffffff;
-      padding: 20px;
+      padding: 12px;
       border-radius: 16px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
@@ -104,17 +104,24 @@
 
     #reader {
       width: 100%;
-      margin: 15px 0;
+      max-height: 280px; /* تحديد حد أقصى للارتفاع لعدم شغل الشاشة كاملة */
+      margin: 5px 0;
       border: 2px solid #333;
       border-radius: 12px;
       overflow: hidden;
       background: #000;
     }
 
+     /* تحديد أبعاد فيديو الكاميرا داخل العنصر */
+    #reader video {
+      max-height: 280px;
+      object-fit: cover;
+    }
+
     #result-box {
       margin: 15px 0;
-      padding: 15px;
-      font-size: 22px;
+      padding: 10px 15px;
+      font-size: 18px;    /* تصغير الخط قليلاً لاستيعاب النص */
       font-weight: 700;
       border-radius: 10px;
       display: none;
@@ -264,7 +271,7 @@
         "reader", 
         { 
           fps: 25, 
-          qrbox: { width: 170, height: 170 },
+          qrbox: { width: 200, height: 200 },
           facingMode: "environment"
         },
         false
